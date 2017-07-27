@@ -69,7 +69,7 @@ $stmt2 = $pro2->readAll();
 		</div>
 		<div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 		
-		<footer class="text-center">&copy; 2017</footer>
+		<footer class="text-center">&copy; 2017 ZalixMedia | Modified by Yayan Yanuari</footer>
 	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
