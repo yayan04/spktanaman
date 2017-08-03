@@ -197,7 +197,7 @@ $stmty = $pro->readKhusus();
     <script>
     	$('#cetak').click(function() {
 
-    		$("#rangking").printMe({ "path": "css/bootstrap.min.css", "title": "LAPORAN HASIL AKHIR" }); 
+    		$("#rangking").printMe({ "path": "css/bootstrap.css", "title": "LAPORAN HASIL AKHIR" }); 
 
 		});
     </script>

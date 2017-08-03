@@ -38,53 +38,42 @@ if($_POST){
 		  <div class="col-xs-12 col-sm-12 col-md-12">
 		  	<div class="page-header">
                             <div class="text-center">
-                                <h5>Tambah Rangking</h5>
+                                <h4>Tambah Rangking</h4>
                             </div>
 			</div>
 			
-			    <form method="post">
-				  <div class="form-group">
-				    <label for="ia">Alternatif</label>
-				    <select class="form-control" id="ia" name="ia">
+			    <div class="row">
+                    <div style="margin-left: 25%;" class="col-xs-6 col-sm-6 col-md-6">
+		  	
+		  	<div class="panel panel-default"><div class="panel-body">
+                                <div class="text-center" style="padding-bottom: 10px"><h5>Masukkan Nilai Parameter</h5></div>
+		  		<form method="post">
+
+
 				    	<?php
-						$stmt3 = $pgn1->readAll();
-						while ($row3 = $stmt3->fetch(PDO::FETCH_ASSOC)){
-							extract($row3);
-							echo "<option value='{$id_alternatif}'>{$nama_alternatif}</option>";
+						$stmt3 = $pgn2->readAll();
+						while ($row2 = $stmt3->fetch(PDO::FETCH_ASSOC)){
+							extract($row2); ?>
+							<!--echo "<option value='{$id_kriteria}'>{$nama_kriteria}</option>";-->
+                                                        <div class="form-group">
+                                                            <label for="ik"><h6>(<?php echo "{$id_kriteria}" ?>) <?php echo "{$nama_kriteria}" ?></h6></label>
+                                                            <input type="text" class="form-control" id="nn" name="nn" placeholder="Nilai <?php echo "{$nama_kriteria}" ?>" required>
+                                                        </div>
+                                        <?php 
 						}
 					    ?>
-				    </select>
-				  </div>
-				  <div class="form-group">
-				    <label for="ik">Kriteria</label>
-				    <select class="form-control" id="ik" name="ik">
-				    	<?php
-						$stmt2 = $pgn2->readAll();
-						while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
-							extract($row2);
-							echo "<option value='{$id_kriteria}'>{$nama_kriteria}</option>";
-						}
-					    ?>
-				    </select>
-				  </div>
-				  <div class="form-group">
-				    <label for="nn">Nilai</label>
-				    <select class="form-control" id="nn" name="nn">
-				    	<?php
-						$stmt4 = $pgn3->readAll();
-						while ($row4 = $stmt4->fetch(PDO::FETCH_ASSOC)){
-							extract($row4);
-							echo "<option value='{$jum_nilai}'>{$ket_nilai}</option>";
-						}
-					    ?>
-				    </select>
-				  </div>
-				  <button type="submit" class="btn btn-primary">Simpan</button>
-				  <button type="button" onclick="location.href='rangking.php'" class="btn btn-success">Kembali</button>
-				</form>
-			  
+				  
+                                  
+                                    <button style="width: 100%" type="submit" class="btn btn-primary">Proses</button>
+                                    <!--<button style="width: 49.5%" type="button" onclick="location.href='rangking.php'" class="btn btn-success">Kembali</button>-->
+		  	</form>
+                        </div></div>
+		  	
 		  </div>
 		</div>
+	</div>
+			  
+		  </div>
 		<?php
 include_once 'footer.php';
 ?>

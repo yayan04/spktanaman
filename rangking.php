@@ -10,70 +10,86 @@ include_once 'includes/rangking.inc.php';
 $pro = new Rangking($db);
 $stmt = $pro->readKhusus();
 ?>
+
+<?php
+include_once 'header.php';
+include_once 'includes/alternatif.inc.php';
+$pgn1 = new Alternatif($db);
+include_once 'includes/kriteria.inc.php';
+$pgn2 = new Kriteria($db);
+include_once 'includes/nilai.inc.php';
+$pgn3 = new Nilai($db);
+if($_POST){
+	
+	include_once 'includes/rangking.inc.php';
+	$eks = new rangking($db);
+
+	$eks->ia = $_POST['ia'];
+	$eks->ik = $_POST['ik'];
+	$eks->nn = $_POST['nn'];
+	
+	if($eks->insert()){
+?>
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Berhasil Tambah Data!</strong> Tambah lagi atau <a href="rangking.php">lihat semua data</a>.
+</div>
+<?php
+	}
+	
+	else{
+?>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Gagal Tambah Data!</strong> Terjadi kesalahan, coba sekali lagi.
+</div>
+<?php
+	}
+}
+?>
+
 	<br/>
 	<div>
 	
 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs" role="tablist">
-	    <li role="presentation" class="active"><a href="#lihat" aria-controls="lihat" role="tab" data-toggle="tab">Lihat Semua Data</a></li>
-	    <li role="presentation"><a href="#rangking" aria-controls="rangking" role="tab" data-toggle="tab">Perangkingan</a></li>
+	    <li role="presentation" class="active"><a href="#lihat" aria-controls="lihat" role="tab" data-toggle="tab">Form Masukan Data</a></li>
+	    <li role="presentation"><a href="#rangking" aria-controls="rangking" role="tab" data-toggle="tab">Hasil Normalisasi</a></li>
 	  </ul>
 	
 	  <!-- Tab panes -->
 	  <div class="tab-content">
 	    <div role="tabpanel" class="tab-pane active" id="lihat">
-	    	<br/>
-	    	<div class="row">
-				<div class="col-md-6 text-left">
-					<h4>Data Rangking</h4>
-				</div>
-				<div class="col-md-6 text-right">
-					<button onclick="location.href='rangking-baru.php'" class="btn btn-primary">Tambah Data</button>
-				</div>
-			</div>
-			<br/>
-			<table width="100%" class="table table-striped table-bordered" id="tabeldata">
-		        <thead>
-		            <tr>
-		                <th width="30px">No</th>
-		                <th>Alternatif</th>
-		                <th>Kriteria</th>
-		                <th>Nilai</th>
-		                <th width="100px">Aksi</th>
-		            </tr>
-		        </thead>
-		
-		        <tfoot>
-		            <tr>
-		                <th>No</th>
-		                <th>Alternatif</th>
-		                <th>Kriteria</th>
-		                <th>Nilai</th>
-		                <th>Aksi</th>
-		            </tr>
-		        </tfoot>
-		
-		        <tbody>
-		<?php
-		$no=1;
-		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-		?>
-		            <tr>
-		                <td><?php echo $no++ ?></td>
-		                <td><?php echo $row['nama_alternatif'] ?></td>
-		                <td><?php echo $row['nama_kriteria'] ?></td>
-		                <td><?php echo $row['nilai_rangking'] ?></td>
-		                <td class="text-center">
-							<a href="rangking-ubah.php?ia=<?php echo $row['id_alternatif'] ?>&ik=<?php echo $row['id_kriteria'] ?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-							<a href="rangking-hapus.php?ia=<?php echo $row['id_alternatif'] ?>&ik=<?php echo $row['id_kriteria'] ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-					    </td>
-		            </tr>
-		<?php
-		}
-		?>
-		        </tbody>
-		
-		    </table>
+                <br><br>
+	    	
+             <div class="row">
+                 <div style="margin-left: 25%" class="col-xs-6 col-sm-6 col-md-6">
+		  	
+		  	<div class="panel panel-default"><div class="panel-body">
+                                <div class="text-center" style="padding-bottom: 10px"><h5>Masukkan Nilai Parameter</h5></div>
+		  		<form method="post">
+
+				    	<?php
+						$stmt3 = $pgn2->readAll();
+                                                $no = 1;
+						while ($row2 = $stmt3->fetch(PDO::FETCH_ASSOC)){
+							extract($row2); ?>
+							<!--echo "<option value='{$id_kriteria}'>{$nama_kriteria}</option>";-->
+                                                        <div class="form-group">
+                                                            <label for="ik"><h6>(<?php echo $no ?>) <?php echo "{$nama_kriteria}" ?></h6></label>
+                                                            <input type="text" class="form-control" id="nn" name="nn" placeholder="Nilai <?php echo "{$nama_kriteria}" ?>" required>
+                                                        </div>
+                                        <?php 
+                                                $no++;
+						}
+					    ?>
+				  
+                                    <button style="width: 100%" type="submit" class="btn btn-success">Proses</button>
+		  	</form>
+                        </div></div>
+		  	
+		  </div>
+		</div> 
 		    		
 	    </div>
 

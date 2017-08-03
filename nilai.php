@@ -6,7 +6,7 @@ $stmt = $pro->readAll();
 ?>
 	<div class="row">
 		<div class="col-md-6 text-left">
-			<h4>Data Nilai Preferensi</h4>
+			<h4>Data Nilai</h4>
 		</div>
             <?php
             if($_SESSION['username'] == "admin"){

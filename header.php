@@ -44,7 +44,7 @@ $db = $config->getConnection();
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
-			<li><a href="index.php">Home</a></li>
+			<li><a href="index.php">Beranda</a></li>
 			<li><a href="nilai.php">Nilai</a></li>
 			<li><a href="kriteria.php">Kriteria</a></li>
 			<li><a href="alternatif.php">Alternatif</a></li>
@@ -60,7 +60,7 @@ $db = $config->getConnection();
                                 <?php
                                 if($_SESSION['username'] == "admin"){
                                 ?>
-				<li><a href="user.php">Manejer Pengguna</a></li>
+				<li><a href="user.php">Kelola Pengguna</a></li>
                                 <?php } ?>
 				<li role="separator" class="divider"></li>
 				<li><a href="logout.php">Logout</a></li>

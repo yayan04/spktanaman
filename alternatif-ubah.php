@@ -26,9 +26,11 @@ if($_POST){
 }
 ?>
 		<div class="row">
-		  <div class="col-xs-12 col-sm-12 col-md-8">
+		  <div class="col-xs-12 col-sm-12 col-md-12">
 		  	<div class="page-header">
-			  <h5>Ubah Alternatif</h5>
+                            <div class="text-center">
+            			<h5>Ubah Alternatif</h5>
+                            </div>
 			</div>
 			
 			    <form method="post">
@@ -40,9 +42,6 @@ if($_POST){
 				  <button type="button" onclick="location.href='alternatif.php'" class="btn btn-success">Kembali</button>
 				</form>
 			  
-		  </div>
-		  <div class="col-xs-12 col-sm-12 col-md-4">
-		  	<?php include_once 'sidebar.php'; ?>
 		  </div>
 		</div>
 		<?php

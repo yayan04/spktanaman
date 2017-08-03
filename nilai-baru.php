@@ -31,7 +31,7 @@ if($_POST){
 		  <div class="col-xs-12 col-sm-12 col-md-12">
 		  	<div class="page-header">
                             <div class="text-center">
-            			<h5>Tambah Nilai Preferensi</h5>
+            			<h5>Tambah Nilai</h5>
                             </div>
 			</div>
 			
