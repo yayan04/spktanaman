@@ -19,7 +19,7 @@ $stmt = $pro->readAll();
                 <th width="30px">No</th>
                 <th>Nama Lengkap</th>
                 <th>Username</th>
-                <th width="100px">Action</th>
+                <th width="100px">Aksi</th>
             </tr>
         </thead>
         <tbody>
