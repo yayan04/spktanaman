@@ -34,6 +34,36 @@ class Alternatif{
 		
 		return $stmt;
 	}
+        
+        
+	function readRank(){
+
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY hasil_alternatif DESC";
+		$stmt = $this->conn->prepare( $query );
+		$stmt->execute();
+		
+		return $stmt;
+	}
+        
+        function readMinID(){
+		
+		$query = "SELECT min(id_alternatif) as MinID FROM " . $this->table_name . "";
+
+		$stmt = $this->conn->prepare( $query );
+		$stmt->execute();
+
+		return $stmt;
+	}
+        
+        function readMaxID(){
+		
+		$query = "SELECT max(id_alternatif) as MaxID FROM " . $this->table_name . "";
+
+		$stmt = $this->conn->prepare( $query );
+		$stmt->execute();
+
+		return $stmt;
+	}
 	
 	// used when filling up the update product form
 	function readOne(){

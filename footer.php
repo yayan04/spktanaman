@@ -1,4 +1,6 @@
+<br>
 <footer class="text-center">&copy; 2017 ZalixMedia | Modified by Yayan Yanuari</footer>
+<br><br>
 	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -5,8 +5,21 @@ class Rangking{
 	private $table_name = "rangking";
 	
 	public $ia;
-	public $ik;
-	public $nn;
+        
+	public $ik1;
+	public $ik2;
+	public $ik3;
+	public $ik4;
+	public $ik5;
+	public $ik6;
+	
+        public $n1;
+        public $n2;
+        public $n3;
+        public $n4;
+        public $n5;
+        public $n6;
+        
 	public $nn2;
 	public $nn3;
 	public $mnr1;
@@ -18,19 +31,44 @@ class Rangking{
 	}
 	
 	function insert(){
-		
-		$query = "insert into ".$this->table_name." values(?,?,?,'','')";
+            
+		$query = "insert into ".$this->table_name." values(?,?,?,'',''),"
+                        . "                                       (?,?,?,'',''),"
+                        . "                                       (?,?,?,'',''),"
+                        . "                                       (?,?,?,'',''),"
+                        . "                                       (?,?,?,'',''),"
+                        . "                                       (?,?,?,'','')";
 		$stmt = $this->conn->prepare($query);
 		$stmt->bindParam(1, $this->ia);
-		$stmt->bindParam(2, $this->ik);
-		$stmt->bindParam(3, $this->nn);
+		$stmt->bindParam(2, $this->ik1);
+		$stmt->bindParam(3, $this->n1);
+                
+                $stmt->bindParam(4, $this->ia);
+		$stmt->bindParam(5, $this->ik2);
+		$stmt->bindParam(6, $this->n2);
+                
+                $stmt->bindParam(7, $this->ia);
+		$stmt->bindParam(8, $this->ik3);
+		$stmt->bindParam(9, $this->n3);
+                
+                $stmt->bindParam(10, $this->ia);
+		$stmt->bindParam(11, $this->ik4);
+		$stmt->bindParam(12, $this->n4);
+                
+                $stmt->bindParam(13, $this->ia);
+		$stmt->bindParam(14, $this->ik5);
+		$stmt->bindParam(15, $this->n5);
+                
+                $stmt->bindParam(16, $this->ia);
+		$stmt->bindParam(17, $this->ik6);
+		$stmt->bindParam(18, $this->n6);
 		
 		if($stmt->execute()){
 			return true;
 		}else{
 			return false;
 		}
-		
+                
 	}
 	
 	function readAll(){
@@ -53,7 +91,7 @@ class Rangking{
 	
 	function readR($a){
 
-		$query = "SELECT * FROM alternatif a, kriteria b, rangking c where a.id_alternatif=c.id_alternatif and b.id_kriteria=c.id_kriteria and c.id_alternatif='$a'";
+		$query = "SELECT * FROM alternatif a, kriteria b, rangking c where a.id_alternatif=c.id_alternatif and b.id_kriteria=c.id_kriteria and c.id_alternatif='$a' ORDER BY a.hasil_alternatif ASC";
 		$stmt = $this->conn->prepare( $query );
 		$stmt->execute();
 		
@@ -197,6 +235,19 @@ class Rangking{
 		}else{
 			return false;
 		}
+	}
+        
+        function deleteAll(){
+		
+		$query = "DELETE FROM " . $this->table_name . "";
+
+		$stmt = $this->conn->prepare( $query );
+		
+                if($stmt->execute()){;
+        		return true;
+                }else{
+                        return false;
+                }
 	}
 }
 ?>

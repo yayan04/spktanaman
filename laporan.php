@@ -5,17 +5,20 @@ $pro1 = new Alternatif($db);
 $stmt1 = $pro1->readAll();
 $stmt1x = $pro1->readAll();
 $stmt1y = $pro1->readAll();
+$stmt1z = $pro1->readRank();
 include_once 'includes/kriteria.inc.php';
 $pro2 = new Kriteria($db);
 $stmt2 = $pro2->readAll();
 $stmt2x = $pro2->readAll();
 $stmt2y = $pro2->readAll();
 $stmt2yx = $pro2->readAll();
+$stmt2z = $pro2->readAll();
 include_once 'includes/rangking.inc.php';
 $pro = new Rangking($db);
 $stmt = $pro->readKhusus();
 $stmtx = $pro->readKhusus();
 $stmty = $pro->readKhusus();
+$stmtz = $pro->readAll();
 ?>
 	<br/>
 	<div>
@@ -31,6 +34,47 @@ $stmty = $pro->readKhusus();
 	  <div class="tab-content">
 	    <div role="tabpanel" class="tab-pane active" id="rangking">
 	    	<br/>
+	    	<h4>Nilai Masukan</h4>
+			<table width="100%" class="table table-striped table-bordered">
+		        <thead>
+		            <tr>
+		                <th colspan="<?php echo $stmt2z->rowCount(); ?>" class="text-center">Kriteria</th>
+		            </tr>
+		            <tr>
+		            <?php
+					while ($row2z = $stmt2z->fetch(PDO::FETCH_ASSOC)){
+					?>
+		                <th class="text-center"><?php echo $row2z['nama_kriteria'] ?></th>
+		            <?php
+					}
+					?>
+		            </tr>
+		        </thead>
+		
+		        <tbody>
+		            <tr>
+                                <td class="text-center">
+                                    <?php $_POST['n1'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php $_POST['n2'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php $_POST['n3'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php $_POST['n4'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php $_POST['n5'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php $_POST['n6'] ?>
+		                </td>
+		            </tr>
+		        </tbody>
+		
+		    </table>
 	    	<h4>Nilai Alternatif Kriteria</h4>
 			<table width="100%" class="table table-striped table-bordered">
 		        <thead>
@@ -62,7 +106,7 @@ $stmty = $pro->readKhusus();
 						?>
 		                <td class="text-center">
 		                	<?php 
-		                	echo $rowrx['nilai_rangking'];
+		                	echo abs($rowrx['nilai_rangking']);
 		                	?>
 		                </td>
 		                <?php
@@ -152,7 +196,7 @@ $stmty = $pro->readKhusus();
 		        <tbody>
 		<?php
                 $rank = 1;
-		while ($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)){
+		while ($row1 = $stmt1z->fetch(PDO::FETCH_ASSOC)){
 		?>
 		            <tr>
 		                <th><?php echo $row1['nama_alternatif'] ?></th>
@@ -169,13 +213,21 @@ $stmty = $pro->readKhusus();
 		                <?php
 		                }
 						?>
+                                                <?php if ($stmtz->rowCount() > 0){ ?>
 						<td align="center">
 							<?php 
 							echo $row1['hasil_alternatif'];
 							?>
 						</td>
+                                                <td style="font-weight: bold" align="center">
+							<?php 
+							echo $rank;
+							?>
+						</td>
+                                                <?php } ?>
 		            </tr>
 		<?php
+                $rank++;
 		}
 		?>
 		        </tbody>
@@ -186,7 +238,9 @@ $stmty = $pro->readKhusus();
 	  </div>
 	
 	</div>
+        <br>
 	<footer class="text-center">&copy; 2017 ZalixMedia | Modified by Yayan Yanuari</footer>
+        <br><br>
 	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

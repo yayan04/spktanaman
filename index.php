@@ -14,7 +14,7 @@ $stmt2 = $pro2->readAll();
 		<div class="row">
 		  <div class="col-xs-12 col-sm-12 col-md-4">
 		  	<div class="page-header">
-			  <h5>Nilai Preferensi</h5>
+			  <h5>Nilai</h5>
 			</div>
 			<div class="panel panel-default">
 			  <div class="panel-body">
@@ -22,7 +22,7 @@ $stmt2 = $pro2->readAll();
 			    	<?php
 					while ($row3 = $stmt3->fetch(PDO::FETCH_ASSOC)){
 					?>
-				  	<li><?php echo $row3['ket_nilai'] ?> (<?php echo $row3['jum_nilai'] ?>)</li>
+				  	<li><?php echo $row3['ket_nilai'] ?> </li>
 				  	<?php
 					}
 				  	?>
@@ -68,8 +68,9 @@ $stmt2 = $pro2->readAll();
 		  </div>
 		</div>
 		<div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		
+                <br>
 		<footer class="text-center">&copy; 2017 ZalixMedia | Modified by Yayan Yanuari</footer>
+                <br><br>
 	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
