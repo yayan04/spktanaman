@@ -6,6 +6,7 @@ $stmt1 = $pro1->readAll();
 include_once 'includes/kriteria.inc.php';
 $pro2 = new Kriteria($db);
 $stmt2 = $pro2->readAll();
+$stmt2z = $pro2->readAll();
 include_once 'includes/rangking.inc.php';
 $pro = new Rangking($db);
 $stmt = $pro->readKhusus();
@@ -61,7 +62,7 @@ if($_POST){
                     $eks->n1 = 1;
                 }
                 //---------------------------------------------------------------
-                $tekanan = abs($_POST['n2'] - 1011.03);      // Tekanan Udara
+                $tekanan = abs($_POST['n2'] - 1011.035);      // Tekanan Udara
                 if($tekanan >= 0 && $tekanan <= 0.4){
                     $eks->n2 = 5;
                 }
@@ -81,7 +82,7 @@ if($_POST){
                     $eks->n2 = 1;
                 }
                 //---------------------------------------------------------------
-                $kecepatan = abs($_POST['n3'] - 5.98);         // Kecepatan Angin
+                $kecepatan = abs($_POST['n3'] - 7.22);         // Kecepatan Angin
                 if($kecepatan >= 0 && $kecepatan <= 2){
                     $eks->n3 = 5;
                 }
@@ -101,7 +102,7 @@ if($_POST){
                     $eks->n3 = 1;
                 }
                 //---------------------------------------------------------------
-                $kelembaban = abs($_POST['n4'] - 79.87);         // Kelembaban Udara
+                $kelembaban = abs($_POST['n4'] - 75);         // Kelembaban Udara
                 if($kelembaban >= 0 && $kelembaban <= 5){
                     $eks->n4 = 5;
                 }
@@ -121,20 +122,20 @@ if($_POST){
                     $eks->n4 = 1;
                 }
                 //----------------------------------------------------------------
-                $curah = abs($_POST['n5'] - 1750);         // Curah Hujan
-                if($curah >= 0 && $curah <= 199){
+                $curah = abs($_POST['n5'] - (1750/12));         // Curah Hujan
+                if($curah >= 0 && $curah <= 29){
                     $eks->n5 = 5;
                 }
-                else if($curah >= 200 && $curah <= 399){
+                else if($curah >= 30 && $curah <= 59){
                     $eks->n5 = 4;
                 }
-                else if($curah >= 400 && $curah <= 599){
+                else if($curah >= 60 && $curah <= 89){
                     $eks->n5 = 3;
                 }
-                else if($curah >= 600 && $curah <= 799){
+                else if($curah >= 90 && $curah <= 119){
                     $eks->n5 = 2;
                 }
-                else if($curah >= 800 && $curah <= 999){
+                else if($curah >= 120 && $curah <= 149){
                     $eks->n5 = 1;
                 }
                 else {
@@ -183,7 +184,7 @@ if($_POST){
                     $eks->n1 = 1;
                 }
                 //---------------------------------------------------------------
-                $tekanan = abs($_POST['n2'] - 1011.03);      // Tekanan Udara
+                $tekanan = abs($_POST['n2'] - 1011.035);      // Tekanan Udara
                 if($tekanan >= 0 && $tekanan <= 0.4){
                     $eks->n2 = 5;
                 }
@@ -203,7 +204,7 @@ if($_POST){
                     $eks->n2 = 1;
                 }
                 //----------------------------------------------------------------
-                $kecepatan = abs($_POST['n3'] - 5.98);         // Kecepatan Angin
+                $kecepatan = abs($_POST['n3'] - 7.22);         // Kecepatan Angin
                 if($kecepatan >= 0 && $kecepatan <= 2){
                     $eks->n3 = 5;
                 }
@@ -223,7 +224,7 @@ if($_POST){
                     $eks->n3 = 1;
                 }
                 //----------------------------------------------------------------
-                $kelembaban = abs($_POST['n4'] - 79.87);         // Kelembaban Udara
+                $kelembaban = abs($_POST['n4'] - 75);         // Kelembaban Udara
                 if($kelembaban >= 0 && $kelembaban <= 5){
                     $eks->n4 = 5;
                 }
@@ -243,20 +244,20 @@ if($_POST){
                     $eks->n4 = 1;
                 }
                 //----------------------------------------------------------------
-                $curah = abs($_POST['n5'] - 1075);         // Curah Hujan
-                if($curah >= 0 && $curah <= 199){
+                $curah = abs($_POST['n5'] - (1075/12));         // Curah Hujan
+                if($curah >= 0 && $curah <= 29){
                     $eks->n5 = 5;
                 }
-                else if($curah >= 200 && $curah <= 399){
+                else if($curah >= 30 && $curah <= 59){
                     $eks->n5 = 4;
                 }
-                else if($curah >= 400 && $curah <= 599){
+                else if($curah >= 60 && $curah <= 89){
                     $eks->n5 = 3;
                 }
-                else if($curah >= 600 && $curah <= 799){
+                else if($curah >= 90 && $curah <= 119){
                     $eks->n5 = 2;
                 }
-                else if($curah >= 800 && $curah <= 999){
+                else if($curah >= 120 && $curah <= 149){
                     $eks->n5 = 1;
                 }
                 else {
@@ -305,7 +306,7 @@ if($_POST){
                     $eks->n1 = 1;
                 }
                 //---------------------------------------------------------------
-                $tekanan = abs($_POST['n2'] - 1011.03);      // Tekanan Udara
+                $tekanan = abs($_POST['n2'] - 1011.035);      // Tekanan Udara
                 if($tekanan >= 0 && $tekanan <= 0.4){
                     $eks->n2 = 5;
                 }
@@ -325,7 +326,7 @@ if($_POST){
                     $eks->n2 = 1;
                 }
                 //----------------------------------------------------------------
-                $kecepatan = abs($_POST['n3'] - 5.98);         // Kecepatan Angin
+                $kecepatan = abs($_POST['n3'] - 7.22);         // Kecepatan Angin
                 if($kecepatan >= 0 && $kecepatan <= 2){
                     $eks->n3 = 5;
                 }
@@ -345,7 +346,7 @@ if($_POST){
                     $eks->n3 = 1;
                 }
                 //----------------------------------------------------------------
-                $kelembaban = abs($_POST['n4'] - 79.87);         // Kelembaban Udara
+                $kelembaban = abs($_POST['n4'] - 75);         // Kelembaban Udara
                 if($kelembaban >= 0 && $kelembaban <= 5){
                     $eks->n4 = 5;
                 }
@@ -365,20 +366,20 @@ if($_POST){
                     $eks->n4 = 1;
                 }
                 //----------------------------------------------------------------
-                $curah = abs($_POST['n5'] - 675);         // Curah Hujan
-                if($curah >= 0 && $curah <= 199){
+                $curah = abs($_POST['n5'] - (675/12));         // Curah Hujan
+                if($curah >= 0 && $curah <= 29){
                     $eks->n5 = 5;
                 }
-                else if($curah >= 200 && $curah <= 399){
+                else if($curah >= 30 && $curah <= 59){
                     $eks->n5 = 4;
                 }
-                else if($curah >= 400 && $curah <= 599){
+                else if($curah >= 60 && $curah <= 89){
                     $eks->n5 = 3;
                 }
-                else if($curah >= 600 && $curah <= 799){
+                else if($curah >= 90 && $curah <= 119){
                     $eks->n5 = 2;
                 }
-                else if($curah >= 800 && $curah <= 999){
+                else if($curah >= 120 && $curah <= 149){
                     $eks->n5 = 1;
                 }
                 else {
@@ -427,7 +428,7 @@ if($_POST){
                     $eks->n1 = 1;
                 }
                 //----------------------------------------------------------------
-                $tekanan = abs($_POST['n2'] - 1011.03);      // Tekanan Udara
+                $tekanan = abs($_POST['n2'] - 1011.035);      // Tekanan Udara
                 if($tekanan >= 0 && $tekanan <= 0.4){
                     $eks->n2 = 5;
                 }
@@ -447,7 +448,7 @@ if($_POST){
                     $eks->n2 = 1;
                 }
                 //----------------------------------------------------------------
-                $kecepatan = abs($_POST['n3'] - 5.98);         // Kecepatan Angin
+                $kecepatan = abs($_POST['n3'] - 7.22);         // Kecepatan Angin
                 if($kecepatan >= 0 && $kecepatan <= 2){
                     $eks->n3 = 5;
                 }
@@ -487,20 +488,20 @@ if($_POST){
                     $eks->n4 = 1;
                 }
                 //----------------------------------------------------------------
-                $curah = abs($_POST['n5'] - 1125);         // Curah Hujan
-                if($curah >= 0 && $curah <= 199){
+                $curah = abs($_POST['n5'] - (1125/12));         // Curah Hujan
+                if($curah >= 0 && $curah <= 29){
                     $eks->n5 = 5;
                 }
-                else if($curah >= 200 && $curah <= 399){
+                else if($curah >= 30 && $curah <= 59){
                     $eks->n5 = 4;
                 }
-                else if($curah >= 400 && $curah <= 599){
+                else if($curah >= 60 && $curah <= 89){
                     $eks->n5 = 3;
                 }
-                else if($curah >= 600 && $curah <= 799){
+                else if($curah >= 90 && $curah <= 119){
                     $eks->n5 = 2;
                 }
-                else if($curah >= 800 && $curah <= 999){
+                else if($curah >= 120 && $curah <= 149){
                     $eks->n5 = 1;
                 }
                 else {
@@ -549,7 +550,7 @@ if($_POST){
                     $eks->n1 = 1;
                 }
                 //----------------------------------------------------------------
-                $tekanan = abs($_POST['n2'] - 1011.03);      // Tekanan Udara
+                $tekanan = abs($_POST['n2'] - 1011.035);      // Tekanan Udara
                 if($tekanan >= 0 && $tekanan <= 0.4){
                     $eks->n2 = 5;
                 }
@@ -569,7 +570,7 @@ if($_POST){
                     $eks->n2 = 1;
                 }
                 //----------------------------------------------------------------
-                $kecepatan = abs($_POST['n3'] - 5.98);         // Kecepatan Angin
+                $kecepatan = abs($_POST['n3'] - 7.22);         // Kecepatan Angin
                 if($kecepatan >= 0 && $kecepatan <= 2){
                     $eks->n3 = 5;
                 }
@@ -609,20 +610,20 @@ if($_POST){
                     $eks->n4 = 1;
                 }
                 //----------------------------------------------------------------
-                $curah = abs($_POST['n5'] - 1630);         // Curah Hujan
-                if($curah >= 0 && $curah <= 199){
+                $curah = abs($_POST['n5'] - (1630/12));         // Curah Hujan
+                if($curah >= 0 && $curah <= 29){
                     $eks->n5 = 5;
                 }
-                else if($curah >= 200 && $curah <= 399){
+                else if($curah >= 30 && $curah <= 59){
                     $eks->n5 = 4;
                 }
-                else if($curah >= 400 && $curah <= 599){
+                else if($curah >= 60 && $curah <= 89){
                     $eks->n5 = 3;
                 }
-                else if($curah >= 600 && $curah <= 799){
+                else if($curah >= 90 && $curah <= 119){
                     $eks->n5 = 2;
                 }
-                else if($curah >= 800 && $curah <= 999){
+                else if($curah >= 120 && $curah <= 149){
                     $eks->n5 = 1;
                 }
                 else {
@@ -664,7 +665,7 @@ if($_POST){
       <strong>Gagal Proses Data!</strong> Terjadi kesalahan, coba sekali lagi.
     </div>
     <?php
-    echo("<meta http-equiv='refresh' content='1; URL=laporan.php'>");
+            echo("<meta http-equiv='refresh' content='1; URL=laporan.php'>");
             }
 
             else{
@@ -674,24 +675,41 @@ if($_POST){
       <strong>Berhasil Proses Data!</strong>
     </div>
     <?php
-    echo("<meta http-equiv='refresh' content='1; URL=laporan.php'>");
+            echo("<meta http-equiv='refresh' content='1; URL=laporan.php'>");
             }
 }
 ?>
 
-<script type="text/javascript">
-    function confirm(){
+<script type="text/javascript" >
+    function konfirmasi(){
         var msg;
         msg = "Apakah Anda Yakin Ingin Mereset Data ?";
         var agree = confirm(msg);
         
-        if(agree){
+        if(agree == true){
             return true;
         } else{
             return false;
         }
     }
 </script>
+
+<?php
+        include_once "includes/config.php";
+        $database = new Config();
+        $db = $database->getConnection();   
+        
+        //        menampilkan pesan jika ada pesan RESET
+        if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+            echo '<div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>'. $_SESSION['pesan'] .'</strong>
+                  </div>';
+            echo("<meta http-equiv='refresh' content='1; URL=rangking.php'>");
+        }
+        //        mengatur session pesan menjadi kosong
+        $_SESSION['pesan'] = '';
+?>
 	<br/>
 	<div>
 	  <!-- Nav tabs -->
@@ -709,7 +727,8 @@ if($_POST){
                  <div style="margin-left: 25%" class="col-xs-6 col-sm-6 col-md-6">
 		  	
 		  	<div class="panel panel-default"><div class="panel-body">
-                                <div class="text-center" style="padding-bottom: 10px"><h5>Masukkan Nilai Parameter</h5></div>
+                                <div class="text-center" style="padding-bottom: 0px"><h4>Masukkan Nilai Parameter</h4></div>
+                                <div class="text-center" style="padding-bottom: 10px"><h7>Gunakan tanda titik (.) untuk nilai pecahan desimal</h7></div>
                                 <form method="post">
 
 				    	<?php
@@ -735,7 +754,7 @@ if($_POST){
                                     <?php if ($stmtz->rowCount() == 0){ ?> 
                                     <button style="width: 100%" type="submit" class="btn btn-success">Proses</button>
                                     <?php } else { ?>
-                                    <a href="<?php  ?>" onclick="return confirm()">
+                                    <a href="rangking-hapus-all.php" onclick="return konfirmasi()">
                                     <button style="width: 100%" type="button" class="btn btn-danger" onclick="">Reset</button>
                                     </a>
                                     <?php } ?>
@@ -749,6 +768,47 @@ if($_POST){
 
 	    <div role="tabpanel" class="tab-pane" id="rangking">
 	    	<br/>
+                <h4>Nilai Masukan</h4>
+			<table width="100%" class="table table-striped table-bordered">
+		        <thead>
+		            <tr>
+		                <th colspan="<?php echo $stmt2z->rowCount(); ?>" class="text-center">Kriteria</th>
+		            </tr>
+		            <tr>
+		            <?php
+					while ($row2z = $stmt2z->fetch(PDO::FETCH_ASSOC)){
+					?>
+		                <th class="text-center"><?php echo $row2z['nama_kriteria'] ?></th>
+		            <?php
+					}
+					?>
+		            </tr>
+		        </thead>
+		
+		        <tbody>
+		            <tr><?php if($_POST){ ?>
+                                <td class="text-center">
+                                    <?php echo $_POST['n1'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php echo $_POST['n2'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php echo $_POST['n3'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php echo $_POST['n4'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php echo $_POST['n5'] ?>
+		                </td>
+                                <td class="text-center">
+                                    <?php echo $_POST['n6'] ?>
+                            </td><?php } ?>
+		            </tr>
+		        </tbody>
+		
+		    </table>
 	    	<h4>Normalisasi R Perangkingan</h4>
 			<table width="100%" class="table table-striped table-bordered">
 		        <thead>
