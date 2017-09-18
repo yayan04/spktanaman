@@ -33,10 +33,11 @@ if($_POST){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Metode SAW (Simple Additive Weighting) : Sistem Pendukung Keputusan</title>
+    <title>SPK Penentuan Jenis Tanaman : Simple Additive Weighting (SAW)</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href='images/SPK.png' rel='shortcut icon' />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
