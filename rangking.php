@@ -768,47 +768,6 @@ if($_POST){
 
 	    <div role="tabpanel" class="tab-pane" id="rangking">
 	    	<br/>
-                <h4>Nilai Masukan</h4>
-			<table width="100%" class="table table-striped table-bordered">
-		        <thead>
-		            <tr>
-		                <th colspan="<?php echo $stmt2z->rowCount(); ?>" class="text-center">Kriteria</th>
-		            </tr>
-		            <tr>
-		            <?php
-					while ($row2z = $stmt2z->fetch(PDO::FETCH_ASSOC)){
-					?>
-		                <th class="text-center"><?php echo $row2z['nama_kriteria'] ?></th>
-		            <?php
-					}
-					?>
-		            </tr>
-		        </thead>
-		
-		        <tbody>
-		            <tr><?php if($_POST){ ?>
-                                <td class="text-center">
-                                    <?php echo $_POST['n1'] ?>
-		                </td>
-                                <td class="text-center">
-                                    <?php echo $_POST['n2'] ?>
-		                </td>
-                                <td class="text-center">
-                                    <?php echo $_POST['n3'] ?>
-		                </td>
-                                <td class="text-center">
-                                    <?php echo $_POST['n4'] ?>
-		                </td>
-                                <td class="text-center">
-                                    <?php echo $_POST['n5'] ?>
-		                </td>
-                                <td class="text-center">
-                                    <?php echo $_POST['n6'] ?>
-                            </td><?php } ?>
-		            </tr>
-		        </tbody>
-		
-		    </table>
 	    	<h4>Normalisasi R Perangkingan</h4>
 			<table width="100%" class="table table-striped table-bordered">
 		        <thead>
