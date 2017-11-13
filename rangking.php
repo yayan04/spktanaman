@@ -41,6 +41,23 @@ if($_POST){
             $eks->ik5 = $_POST['ik5'];
             $eks->ik6 = $_POST['ik6'];
             
+            $n_suhu = $_POST['n1'];
+            $n_tekanan = $_POST['n2'];
+            $n_kecepatan = $_POST['n3'];
+            $n_kelembaban = $_POST['n4'];
+            $n_curah = $_POST['n5'];
+            $n_ketinggian = $_POST['n6'];
+            
+            $server     = "localhost";
+            $username	= "root";
+            $password	= "";
+            $database	= "spk_saw";
+
+            //koneksi dan memilih database di server
+            mysql_connect($server,$username,$password) or die("Gagal");
+            mysql_select_db($database) or die("Database tidak ditemukan");
+            mysql_query("INSERT INTO masukan VALUES ($n_suhu,$n_tekanan,$n_kecepatan,$n_kelembaban,$n_curah,$n_ketinggian)");
+            
             if($min['MinID'] == 14){                    // TANAMAN PADI
                 $suhu = abs($_POST['n1'] - 23);         // Suhu
                 if($suhu >= 0 && $suhu <= 0.99){

@@ -249,5 +249,14 @@ class Rangking{
                         return false;
                 }
 	}
+        
+        function readMasukan(){
+
+		$query = "SELECT * FROM masukan limit 1";
+		$stmt = $this->conn->prepare( $query );
+		$stmt->execute();
+		
+		return $stmt;
+	}
 }
 ?>

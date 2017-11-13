@@ -19,6 +19,7 @@ $stmt = $pro->readKhusus();
 $stmtx = $pro->readKhusus();
 $stmty = $pro->readKhusus();
 $stmtz = $pro->readAll();
+$stmtMas = $pro->readMasukan();
 ?>
 	<br/>
 	<div>
@@ -52,24 +53,26 @@ $stmtz = $pro->readAll();
 		        </thead>
 		
 		        <tbody>
-		            <tr><?php if($_POST){ ?>
+		            <tr><?php
+					while ($rowMas = $stmtMas->fetch(PDO::FETCH_ASSOC)){
+					?>
                                 <td class="text-center">
-                                    <?php echo $_POST['n1'] ?>
+                                    <?php echo $rowMas['suhu'] ?>
 		                </td>
                                 <td class="text-center">
-                                    <?php echo $_POST['n2'] ?>
+                                    <?php echo $rowMas['tekanan'] ?>
 		                </td>
                                 <td class="text-center">
-                                    <?php echo $_POST['n3'] ?>
+                                    <?php echo $rowMas['kecepatan'] ?>
 		                </td>
                                 <td class="text-center">
-                                    <?php echo $_POST['n4'] ?>
+                                    <?php echo $rowMas['kelembaban'] ?>
 		                </td>
                                 <td class="text-center">
-                                    <?php echo $_POST['n5'] ?>
+                                    <?php echo $rowMas['curah'] ?>
 		                </td>
                                 <td class="text-center">
-                                    <?php echo $_POST['n6'] ?>
+                                    <?php echo $rowMas['ketinggian'] ?>
                             </td><?php } ?>
 		            </tr>
 		        </tbody>
